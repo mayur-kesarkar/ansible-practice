@@ -1,0 +1,2 @@
+- include: playbooks/install.yaml
+- include: playbooks/service/yaml
