@@ -1,4 +1,4 @@
-- hosts: webserver
-- roles:
-    role: webserver
+---
+- include: playbooks/install.yaml
+- include: playbooks/service.yaml
 
