@@ -1,0 +1,15 @@
+---
+- name: user creation
+  hosts: webserver
+  become: yes
+  tasks:
+    - name: creating user on webserver
+      ansible.bultin.user:
+      name: mk1
+      password: "{{'pass@123' | password_hash('sha512','pass@123') }}"
+      state: present
+      password_expire_max: 30
+      system: false
+      create_home: true
+      home: /home/mk1
+      generate_ssh_key: true
